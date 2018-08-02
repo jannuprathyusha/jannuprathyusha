@@ -1,7 +1,8 @@
-n=1
+n=int(input("enter a number"))
+i=1
 sum=0
-while n<7 and n>0:
-	sum+=n
-	n=n+1
+while n+1>i:
+	sum=sum+i
+	i=i+1
 print(sum)
 	

@@ -1,3 +1,4 @@
-for i in range(2,11,2):
-	print(i)
-print("Goodbye!")
+num=0
+for num in range(2,12,2):
+        print(num)
+print("Goodbye!")        
