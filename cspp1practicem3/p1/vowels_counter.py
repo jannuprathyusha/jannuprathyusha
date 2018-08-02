@@ -5,5 +5,4 @@ COUNT = 0
 for i in STRING:
     if i in 'aeiou':
         COUNT += 1
-print()
 print(COUNT)
