@@ -9,8 +9,8 @@ while B <= LENGTH:
     I = STRING[A:B]
     if I == "bob":
         COUNT = COUNT+1
-        A = A+1
-        B = B+1
+    A = A+1
+    B = B+1
 print(COUNT)
     
         
