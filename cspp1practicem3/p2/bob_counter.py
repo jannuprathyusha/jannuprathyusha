@@ -12,7 +12,3 @@ while B <= LENGTH:
     A = A+1
     B = B+1
 print(COUNT)
-    
-        
-                
-
