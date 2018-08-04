@@ -1,10 +1,10 @@
-n = int(input())
-product=1
-temp=0
-while n!=0:
-     temp=n%10
-     product=product*temp
-     n=n//10
-print(product)
+N = int(input())
+PRODUCT=1
+TEMP=0
+while N!=0:
+     TEMP=N%10
+     PRODUCT=PRODUCT*TEMP
+     N=N//10
+print(PRODUCT)
     
     
