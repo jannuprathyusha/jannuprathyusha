@@ -29,7 +29,7 @@ def paying_debt_off_in_a_year(input_balance, annual_interest_rate):
         balance = input_balance
         monthly_payment = monthly_payment + 10
         month = 1
-    while month <= 12:
+        while month <= 12:
             monthly_interest_rate = (annual_interest_rate) / 12.0
             monthly_unpaid_balance = (balance) - (monthly_payment)
             updated_balance_each_month = (monthly_unpaid_balance) + \(monthly_interest_rate * monthly_unpaid_balance)
