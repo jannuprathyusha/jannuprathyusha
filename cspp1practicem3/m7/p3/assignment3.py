@@ -66,7 +66,7 @@ def paying_debt_off_in_a_year(balance, annual_interest_rate):
         elif new_balance < 0 and new_balance < -epsilon:
             monthly_payment_upper_bound = guess
             new_balance = balance
-            else:
+        else:
             return guess
 
         guess = (monthly_payment_lower_bound + monthly_payment_upper_bound)/2
