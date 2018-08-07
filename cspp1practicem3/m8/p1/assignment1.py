@@ -21,5 +21,5 @@ def main():
     a_num = input()
     print(factorial(int(a_num)))    
 
-if __name__== "__main__":
+if __name__ == "__main__":
     main()
