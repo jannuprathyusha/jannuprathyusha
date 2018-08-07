@@ -12,8 +12,8 @@ def gcdIter(a, b):
     '''
 
     for i in range (1,a+1):
-        if  b==0:
-            return a
+        if  b==0 and a==0:
+            return a or b
         if a%i==0 and b%i==0:
             gcd=i
     return gcd       
