@@ -12,6 +12,7 @@ def factorial(n_num):
         return 1
     return n_num*factorial(n_num-1)
 def main():
+'"#output factorial"'    
     a_num = input()
     print(factorial(int(a_num)))
 if __name__ == "__main__":
