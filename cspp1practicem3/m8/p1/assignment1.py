@@ -11,6 +11,7 @@ def factorial(n_num):
     if n_num in (0, 1):
         return 1
     return n_num*factorial(n_num-1)
+'"#Function main"'
 def main():
     a_num = input()
     print(factorial(int(a_num)))
