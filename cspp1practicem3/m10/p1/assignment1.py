@@ -16,8 +16,8 @@ def get_available_letters(letters_guessed):
     st_r=''
     for i in DICT:
         if i not in letters_guessed:
-            st_r=st_r + i
-        return st_r    
+            st_r = st_r + i
+    return st_r    
 def main():
     '''
     Main function for the given program
@@ -30,5 +30,5 @@ def main():
     print(get_available_letters(data))
 
 
-if __name__== "__main__":
+if __name__ == "__main__":
     main()
