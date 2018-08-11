@@ -33,11 +33,11 @@ def create_social_network(data):
     '''
 def create_social_network():
     adict = { }
-    L1 = [John,Bryant,Mercedes,olive]
-    L2 = [[Bryant,Debra,Walter],[Olive,Ollie,Freda,Mercedes],[Walter,Robin,Bryant],[John,Ollie]]
+    L1 = ['John','Bryant','Mercedes','olive']
+    L2 = ['[Bryant,Debra,Walter]','[Olive,Ollie,Freda,Mercedes]','[Walter,Robin,Bryant]','[John,Ollie]']
     str = ' '
     for i in L1:
-        adict[L1[i]]=adict[L2[i]]
+        adict[L1[i]] = adict[L2[i]]
         print(adict[L1[i]]:adict[L2[i]])
     
 
