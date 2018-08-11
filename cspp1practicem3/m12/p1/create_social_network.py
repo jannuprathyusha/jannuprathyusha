@@ -38,7 +38,7 @@ def create_social_network():
     str = ' '
     for i in L1:
         adict[L1[i]]=adict[L2[i]]
-        print(adict{L1[i]}:adict{L2[i])
+        print(adict[L1[i]]:adict[L2[i]])
     
 
 def main():
