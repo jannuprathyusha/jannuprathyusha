@@ -25,8 +25,8 @@ def is_flush(hand):
         The hand has a list of cards represented as strings.
     '''
     temp = hand[0]
-    for h_1 in hand:
-        if temp[1] != h_1[1]:
+    for h in hand:
+        if temp[1] != h[1]:
             return False
     return True
 
@@ -34,10 +34,10 @@ def card_ranks(hand):
     ranks = sorted(['--23456789TJQKA'.index(c) for c, s in hand], reverse =True)
     return ranks
 
-def kind(ranks, n_1):
-    for r_1 in ranks:
-        if ranks.count(r_1) == n:
-            return r_1
+def kind(ranks, n):
+    for r in ranks:
+        if ranks.count(r) == n:
+            return r
     return 0
 
 def two_pair(ranks):
@@ -63,7 +63,7 @@ def hand_rank(hand):
     if kind(ranks, 4):
         return (7, kind(ranks,4), ranks)
     if kind(ranks, 3) and kind(ranks, 2):
-        return (6, (kind(ranks, 3), kind(ranks, 2)), ranks)
+        return (6, (kind(ranks,3), kind(ranks, 2)), ranks)
     if is_flush(hand):
         return (5, ranks)
     if is_straight(ranks):
