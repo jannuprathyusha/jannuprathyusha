@@ -40,7 +40,6 @@ def create_social_network():
         adict[L1[i]] = adict[L2[i]]
         print(adict[L1[i]] follows adict[L2[i]])
     
-
 def main():
     '''
         handling testcase input and printing output
