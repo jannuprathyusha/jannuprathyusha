@@ -65,7 +65,12 @@ def build_search_index(docs):
     # return search index
     search_index = { }
     for word in word_list:
-    	
+        print 
+
+
+
+
+
 
 
     
