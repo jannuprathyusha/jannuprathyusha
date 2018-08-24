@@ -168,7 +168,7 @@ class PlaintextMessage(Message):
         Used to safely access self.message_text_encrypted outside of the class
         Returns: self.message_text_encrypted
         '''
-    return self.message_text_encrypted
+        return self.message_text_encrypted
     def change_shift(self, shift):
         '''
         Changes self.shift of the PlaintextMessage and updates other
