@@ -17,6 +17,7 @@
 ### Helper code
 
 import string
+from copy import deepcopy
 
 def load_words(file_name):
     '''
@@ -40,7 +41,7 @@ def load_words(file_name):
 
 WORDLIST_FILENAME = 'words.txt'
 
-class Message(object):
+class Message:
     ''' Grader's Implementation of Message Object '''
 
     ### DO NOT MODIFY THIS METHOD ###
@@ -93,14 +94,11 @@ class Message(object):
         lower_keys = list(string.ascii_lowercase)
         lower_values = list(string.ascii_lowercase)
         shift_lower_values = lower_values[shift:] + lower_values[:shift]
-
         upper_keys = list(string.ascii_uppercase)
         upper_values = list(string.ascii_uppercase)
         upper_shift_values = upper_values[shift:] + upper_values[:shift]
-
         full_keys = lower_keys + upper_keys
         full_values = shift_lower_values + upper_shift_values
-
         self.shift_dict = dict(zip(full_keys, full_values))
         return self.shift_dict
 
@@ -110,12 +108,10 @@ class Message(object):
         Applies the Caesar Cipher to self.message_text with the input shift.
         Creates a new string that is self.message_text shifted down the
         alphabet by some number of characters determined by the input shift
-
         shift (integer): the shift with which to encrypt the message.
         0 <= shift < 26
-
         Returns: the message text (string) in which every character is shifted
-             down the alphabet by the input shift
+        down the alphabet by the input shift
         '''
         new_msg = []
         for i in self.message_text:
@@ -126,13 +122,65 @@ class Message(object):
                 new_msg.append(self.build_shift_dict(shift)[i])
         return ''.join(new_msg)
 
-### Helper code End
+class PlaintextMessage(Message):
+    '''
+    the class plain textmessage is to give the complete updated dictionary and
+    changes made in shift also
+    '''
+    def __init__(self, text, shift):
+        '''
+        Initializes a PlaintextMessage object
+        text (string): the message's text
+        shift (integer): the shift associated with this message
+        A PlaintextMessage object inherits from Message and has five attributes:
+            self.message_text (string, determined by input text)
+            self.valid_words (list, determined using helper function load_words)
+            self.shift (integer, determined by input shift)
+            self.encrypting_dict (dictionary, built using shift)
+            self.message_text_encrypted (string, created using shift)
 
+        Hint: consider using the parent class constructor so less
+        code is repeated
+        '''
+        self.message_text = text
+        self.valid_words = load_words("words.txt")
+        self.shift = shift
+        Message.__init__(self, text)
+        self.encrypting_dict = self.build_shift_dict(self.shift)
+        self.message_text_encrypted = self.apply_shift(self.shift)
 
+    def get_shift(self):
+        '''
+        Used to safely access self.shift outside of the class
+        Returns: self.shift
+        '''
+        return self.shift
 
-### Paste your implementation of the `PlaintextMessage` class here
-
-
+    def get_encrypting_dict(self):
+        '''
+        Used to safely access a copy self.encrypting_dict outside of the class
+        Returns: a COPY of self.encrypting_dict
+        '''
+        copy_dict = deepcopy(self.encrypting_dict)
+        return copy_dict
+    def get_message_text_encrypted(self):
+        '''
+        Used to safely access self.message_text_encrypted outside of the class
+        Returns: self.message_text_encrypted
+        '''
+    return self.message_text_encrypted
+    def change_shift(self, shift):
+        '''
+        Changes self.shift of the PlaintextMessage and updates other
+        attributes determined by shift (ie. self.encrypting_dict and
+        message_text_encrypted).
+        shift (integer): the new shift that should be associated with this message.
+        0 <= shift < 26
+        Returns: nothing
+        '''
+        self.shift = shift
+        self.encrypting_dict = self.build_shift_dict(self.shift)
+        self.message_text_encrypted = self.apply_shift(self.shift)
 
 def main():
     ''' Function to handle testcases '''
@@ -145,6 +193,5 @@ def main():
     print(data.get_shift())
     print(data.get_encrypting_dict())
     print(data.get_message_text_encrypted())
-
 if __name__ == "__main__":
     main()
