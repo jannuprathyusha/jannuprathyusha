@@ -43,7 +43,7 @@ def is_word(word_list, word):
     False
     '''
     word = word.lower()
-    word = word.strip(" !@#$%^&*()-_+={}[]|\:;'<>?,./\"")
+    word = word.strip(" !@#$%^&*()-_+=[]|:0;'<>?,./")
     return word in word_list
 
 ### DO NOT MODIFY THIS FUNCTION ###
@@ -58,7 +58,7 @@ def get_story_string():
 
 WORDLIST_FILENAME = 'words.txt'
 
-class Message(object):
+class Message:
     ''' Message object '''
     ### DO NOT MODIFY THIS METHOD ###
     def __init__(self, text):
@@ -73,6 +73,7 @@ class Message(object):
         '''
         self.message_text = text
         self.valid_words = load_words("words.txt")
+        self.shift_dict = {}
 
     ### DO NOT MODIFY THIS METHOD ###
     def get_message_text(self):
@@ -166,9 +167,9 @@ class PlaintextMessage(Message):
         self.text = text
         self.shift = shift
         self.valid_words = load_words("words.txt")
-        message = Message(text)
-        self.encrypting_dict = message.build_shift_dict(shift)
-        self.message_text_encrypted = message.apply_shift(shift)
+        Message.__init__(self, text)
+        self.encrypting_dict = self.build_shift_dict(shift)
+        self.message_text_encrypted = self.apply_shift(shift)
 
     ### DO NOT MODIFY THIS METHOD ###
     def get_shift(self):
@@ -210,9 +211,8 @@ class PlaintextMessage(Message):
         Returns: nothing
         '''
         self.shift = shift
-        message = Message(self.text)
-        self.encrypting_dict = message.build_shift_dict(shift)
-        self.message_text_encrypted = message.apply_shift(shift)
+        self.encrypting_dict = self.build_shift_dict(shift)
+        self.message_text_encrypted = self.apply_shift(shift)
 
 class CiphertextMessage(Message):
     ''' CiphertextMessage class '''
@@ -227,8 +227,10 @@ class CiphertextMessage(Message):
             self.valid_words (list, determined using helper function load_words)
         '''
         self.message_text = text
+        Message.__init__(self, text)
         self.valid_words = load_words("words.txt")[:]
         self.max_valid_words = 0
+        self.decrypted_message = ()
 
     def decrypt_message(self):
         '''
@@ -264,7 +266,8 @@ def decrypt_story():
     ''' Decrypt the story text using CiphertextMessage class and return the
         shift value and decrypted string in a tuple.
     '''
-    pass #delete this line when you write your code.
+    ciphertext = CiphertextMessage(get_story_string())
+    return ciphertext.decrypt_message()
 
 ### DO NOT MODIFY THIS METHOD ###
 def main():
