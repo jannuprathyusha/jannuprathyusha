@@ -3,7 +3,7 @@ Write a python program to read multiple lines of text input and store the input 
 '''
 
 def main():
-    string = int(input())
+    string = str(int(input()))
     print(string)
 
 if __name__ == '__main__':
