@@ -5,11 +5,11 @@ alphabets in both upper and lower case and numbers.
 
 def clean_string(string):
     for i in string:
-    	if i != '!@#$%^&*()':
-    		string = string.append(i)
-    return string
+        if i not in '!@#$%^&*()':
+            str = string.append(i)
+    return str
 
-    		
+            
 
 
 def main():
