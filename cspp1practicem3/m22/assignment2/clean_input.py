@@ -5,9 +5,10 @@ alphabets in both upper and lower case and numbers.
 
 def clean_string(string):
     str = ""
+    list = []
     for i in string:
         if i not in '!@#$%^&*()':
-            str = str.append(i)
+            str = list.append(i)
     return str
 
             
