@@ -7,7 +7,7 @@ def clean_string(string):
     for i in string:
     	if i != '!@#$%^&*()':
     		string = string.append(i)
-    	return string
+    return string
 
     		
 
