@@ -9,8 +9,8 @@ def print_dictionary(dictionary):
     v = list(dictionary.values)
     keys = k.sort()
     values = v.sort()
-    for i in range(keys)
-        print(keys[i] '-' values[j])
+    for i in range keys:
+        print(keys[i] "-" values[j])
 
 
 
