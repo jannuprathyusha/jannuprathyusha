@@ -1,11 +1,3 @@
-'''
-
-Author:Swapnika
-Created on 2-8-2018
-
-'''
-
-
 def main():
     '''
     function is used to count number of vowels
