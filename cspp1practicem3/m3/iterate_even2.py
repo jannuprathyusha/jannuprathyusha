@@ -1,7 +1,7 @@
 NUM = int(input("Enter the number: "))
-I = 2
-while I <= NUM:
+I = NUM
+print("Hello!")
+while I >= 0:
     if I%2 == 0:
         print(I)
-    I = I + 2
-print("Goodbye")
+    I -= 2
