@@ -1,10 +1,3 @@
-'''
-
-Author: Anisha Vulli
-Date: 21 Aug 2018
-
-
-'''
 import string
 # Helper code
 def load_words(file_name):
