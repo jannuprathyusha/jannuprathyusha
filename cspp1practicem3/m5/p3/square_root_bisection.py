@@ -1,9 +1,3 @@
-'''
-
-Author : Anisha Vulli
-Date : 03 Aug 2018
-
-'''
 def main():
     ''' Function to find square root through bisection'''
     s_q = input()
