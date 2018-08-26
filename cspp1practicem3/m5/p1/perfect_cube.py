@@ -1,10 +1,3 @@
-'''
-
-Author : Anisha Vulli
-Date : 03 Aug 2018
-
-'''
-
 def main():
     ''' This function is used to caluclate cube root through guess and check '''
     #print("Enter an integer")
